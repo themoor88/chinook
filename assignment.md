@@ -22,12 +22,14 @@ Check out [W3Schools' SQL Reference](http://www.w3schools.com/sql/sql_syntax.asp
 1. Count how many tracks belong to the MediaType "Protected MPEG-4 video file".
 ```SQL
 /* Add your answer below */
+SELECT COUNT(*) FROM tracks WHERE media_type_id = 3;
 214
 ```
 
 2. Find the least expensive Track that has the Genre "Electronica/Dance".
 ```SQL
 /* Add your answer below */
+SELECT * FROM tracks WHERE genre_id = 15 ORDER BY unit_price LIMIT 1;
 0.99
 ```
 
