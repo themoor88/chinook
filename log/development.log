@@ -1,0 +1,32 @@
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT 1[0m  [["id", nil]]
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1  [["name", "Hip Hop/Rap"]]
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT 1[0m  [["id", nil]]
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1  [["name", "Hip Hop/Rap"]]
+  [1m[36mGenre Load (0.4ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1[0m  [["name", "Hip Hop/Rap"]]
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "tracks" WHERE "tracks"."genre_id" = $1  [["genre_id", 17]]
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1[0m  [["name", "Hip/Hop/Rap"]]
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM "tracks" WHERE "tracks"."genre_id" = $1  [["genre_id", 17]]
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1[0m  [["name", "Hip/Hop/Rap"]]
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1  [["name", "Hip/Hop Rap"]]
+  [1m[36mGenre Load (0.2ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1[0m  [["name", "Hip Hop/Rap"]]
+  [1m[35mGenre Load (0.2ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1  [["name", "Hip Hop/Rap"]]
+  [1m[36mGenre Load (0.3ms)[0m  [1mSELECT "genres".* FROM "genres" WHERE "genres"."name" = $1[0m  [["name", "Hip Hop/Rap"]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "tracks" WHERE "tracks"."genre_id" = $1  [["genre_id", 17]]
+  [1m[36mMediaType Load (0.4ms)[0m  [1mSELECT "media_types".* FROM "media_types" WHERE "media_types"."name" = $1[0m  [["name", "MPEG audio file"]]
+  [1m[35mMediaType Load (0.4ms)[0m  SELECT "media_types".* FROM "media_types" WHERE "media_types"."name" = $1  [["name", "MPEG audio file"]]
+  [1m[36m (11.0ms)[0m  [1mSELECT MAX("tracks"."unit_price") FROM "tracks"[0m
+  [1m[35m (2.3ms)[0m  SELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" = $1  [["media_type_id", 1]]
+  [1m[36mMediaType Load (0.4ms)[0m  [1mSELECT "media_types".* FROM "media_types" WHERE (name = 'MPEG audio file')[0m
+  [1m[35mTrack Load (5.7ms)[0m  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."media_type_id" IN (SELECT "media_types"."id" FROM "media_types" WHERE (name = 'MPEG audio file'))  ORDER BY unit_price DESC LIMIT 1
+  [1m[36mArtist Load (1.3ms)[0m  [1mSELECT  "artists".* FROM "artists"  ORDER BY "artists"."created_at" DESC LIMIT 2[0m
+  [1m[35mGenre Load (0.3ms)[0m  SELECT "genres".* FROM "genres" WHERE "genres"."name" = $1  [["name", "Hip Hop/Rap"]]
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM "tracks" WHERE "tracks"."genre_id" IN (SELECT "genres"."id" FROM "genres" WHERE "genres"."name" = $1)[0m  [["name", "Hip Hop/Rap"]]
+  [1m[35mMediaType Load (0.3ms)[0m  SELECT "media_types".* FROM "media_types" WHERE "media_types"."name" = $1  [["name", "MPEG audio file"]]
+  [1m[36m (3.1ms)[0m  [1mSELECT MAX("tracks"."unit_price") FROM "tracks" WHERE "tracks"."media_type_id" IN (SELECT "media_types"."id" FROM "media_types" WHERE "media_types"."name" = $1)[0m  [["name", "MPEG audio file"]]
+  [1m[35mPlaylist Load (0.8ms)[0m  SELECT  "playlists".* FROM "playlists"  ORDER BY "playlists"."created_at" DESC LIMIT 2
+  [1m[36mPlaylist Load (0.4ms)[0m  [1mSELECT  "playlists".* FROM "playlists"  ORDER BY "playlists"."created_at" DESC LIMIT 2[0m
+  [1m[35mArtist Load (0.5ms)[0m  SELECT  "artists".* FROM "artists"  ORDER BY "artists"."created_at" DESC LIMIT 2
+  [1m[36mPlaylist Load (0.4ms)[0m  [1mSELECT  "playlists".* FROM "playlists"  ORDER BY updated_at ASC LIMIT 2[0m
+  [1m[35mTrack Load (17.6ms)[0m  SELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1  [["playlist_id", 1]]
+  [1m[36mTrack Load (2.5ms)[0m  [1mSELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1[0m  [["playlist_id", 2]]
+  [1m[35mArtist Load (0.5ms)[0m  SELECT  "artists".* FROM "artists"  ORDER BY "artists"."created_at" DESC LIMIT 2

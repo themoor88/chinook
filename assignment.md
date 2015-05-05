@@ -36,13 +36,40 @@ SELECT * FROM tracks WHERE genre_id = 15 ORDER BY unit_price LIMIT 1;
 3. Find the all the Artists whose names start with A.
 ```SQL
 /* Add your answer below */
-
+SELECT name FROM artists WHERE name LIKE 'A%';
+Aerosmith
+Alice In Chains
+Antônio Carlos Jobim
+Apocalyptica
+Azymuth
+Aquaman
+AC/DC
+Alanis Morissette
+Audioslave
+Avril Lavigne
+Aisha Duo
+Aaron Goldberg
+Academy of St. Martin in the Fields Chamber Ensemble & Sir Neville Marriner
+Academy of St. Martin in the Fields, John Birch, Sir Neville Marriner & Sylvia McNair
+Aaron Copland & London Symphony Orchestra
+Antal Doráti & London Symphony Orchestra
+Amy Winehouse
+Adrian Leaper & Doreen de Feis
+Accept
+Aerosmith & Sierra Leone's Refugee Allstars
+Alberto Turco & Nova Schola Gregoriana
+Anne-Sophie Mutter, Herbert Von Karajan & Wiener Philharmoniker
+Academy of St. Martin in the Fields & Sir Neville Marriner
+Academy of St. Martin in the Fields, Sir Neville Marriner & William Bennett
+Academy of St. Martin in the Fields, Sir Neville Marriner & Thurston Dart
+A Cor Do Som
 ```
 
 4. Find all the Tracks that belong to the first Playlist.
 ```SQL
 /* Add your answer below */
-
+SELECT COUNT (*) FROM playlists_tracks WHERE "playlist_id" = '1';
+3290 tracks
 ```
 
 ## Active Record Query Interface
@@ -140,19 +167,25 @@ Of course, these can be done as one or more steps.
 1. Count how many tracks belong to the "Hip Hop/Rap" genre
 ```ruby
 # Enter your answer below
-
+genre_id = Genre.where(name: 'Hip Hop/Rap')
+Track.where(genre_id: genre_id).count
+35
 ```
 
 2. Find the most expensive Track that has the MediaType "MPEG audio file".
 ```ruby
 # Enter your answer below
-
+media_type_id = MediaType.where(name: 'MPEG audio file')
+Track.where(media_type_id: media_type_id).maximum(:unit_price)
+0.99
 ```
 
 3. Find the 2 oldest Artists.
 ```ruby
 # Enter your answer below
-
+Artist.order(created_at: :desc).limit(2)
+Los Hermanos
+Elis Regina
 ```
 
 
